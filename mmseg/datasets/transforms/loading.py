@@ -67,10 +67,10 @@ class LoadAnnotations(MMCV_LoadAnnotations):
     """
 
     def __init__(
-        self,
-        reduce_zero_label=None,
-        backend_args=None,
-        imdecode_backend='pillow',
+            self,
+            reduce_zero_label=None,
+            backend_args=None,
+            imdecode_backend='pillow',
     ) -> None:
         super().__init__(
             with_bbox=False,

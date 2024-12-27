@@ -1,7 +1,9 @@
 import matplotlib
 import numpy as np
 import tqdm
+from osgeo import gdal
 
+gdal.UseExceptions()
 from fastimg_func import IMAGE4, pad_win, depad_win
 from mmseg.apis import init_model, inference_model
 
@@ -13,10 +15,10 @@ def imdata_gdal2cv(imdata):
 
 
 if __name__ == '__main__':
-    config_path = "../configs/segformer/segformer_mit-b0_8xb2-20k_sugar-512x512.py"
-    checkpoint_path = "../work_dirs/segformer_mit-b0_8xb2-20k_sugar-512x512/iter_20000.pth"
-    img_path = r"D:\Desktop\面试\小平阳裁剪范围\小平阳裁剪范围.jpg"
-    out_path = r'D:\Desktop\面试\小平阳裁剪范围\小平阳裁剪范围_甘蔗提取.tif'
+    config_path = "../configs/segformer/segformer_mit-b0_8xb2-20k_rice-512x512.py"
+    checkpoint_path = "../work_dirs/segformer_mit-b0_8xb2-20k_rice-512x512/iter_2000.pth"
+    img_path = r"G:\BaiduNetdiskDownload\小平阳裁剪范围\小平阳裁剪范围.tif"
+    out_path = r"G:\BaiduNetdiskDownload\小平阳裁剪范围\小平阳裁剪范围_rice.tif"
     winsize, padding = 1024, 100
 
     img = IMAGE4(img_path)
